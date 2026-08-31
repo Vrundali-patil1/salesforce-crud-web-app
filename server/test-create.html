@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Salesforce Create</title>
+</head>
+<body>
+
+<h2>Create Salesforce Account Test</h2>
+
+<button onclick="createAccount()">Create Test Account</button>
+
+<pre id="result"></pre>
+
+<script>
+async function createAccount() {
+
+    const response = await fetch("http://localhost:5000/api/records/Account", {
+        method: "POST",
+        credentials: "include",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            Name: "CRUD Test Account"
+        })
+    });
+
+    const data = await response.json();
+
+    document.getElementById("result").textContent =
+        JSON.stringify(data, null, 2);
+}
+</script>
+
+</body>
+</html>

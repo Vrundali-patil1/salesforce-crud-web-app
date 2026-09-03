@@ -107,13 +107,9 @@ app.get("/auth/callback", async (req, res) => {
         };
 
         delete req.session.oauthState;
-        delete req.session.codeVerifier;
+delete req.session.codeVerifier;
 
-        res.send(`
-            <h2>Salesforce login successful!</h2>
-            <p>You are now authenticated with Salesforce.</p>
-            <p>You can close this page for now.</p>
-        `);
+res.redirect("https://crud-app-vedhi.vercel.app/");
 
     } catch (error) {
         console.error(

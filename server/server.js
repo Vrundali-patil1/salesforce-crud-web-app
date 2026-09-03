@@ -8,7 +8,7 @@ require("dotenv").config();
 const app = express();
 
 app.use(cors({
-    origin: "https://salesforce-crud-web-app-one.vercel.app",
+    origin: "https://crud-app-vedhi.vercel.app",
     credentials: true
 }));
 
